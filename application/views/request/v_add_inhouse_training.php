@@ -21,7 +21,7 @@
 		<div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="">
+                    <form role="form" action="<?php echo base_url(). 'Inhouse_training/create_training'; ?>" method="post">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title"><i class="nav-icon fas fa-briefcase">  Data Pelatihan</i></h3>
@@ -40,9 +40,9 @@
                                             <label for="">Kategori Pelatihan</label>
                                             <select name="kategori_pelatihan" id="" class="custom-select">
                                                 <option value="">Pilih salah satu</option>
-                                                <option value="">TC, Teknikal</option>
-                                                <option value="">MG, Managerial</option>
-                                                <option value="">CL, Culture</option>
+                                                <option value="TC">Teknikal</option>
+                                                <option value="MG">Managerial</option>
+                                                <option value="CL">Culture</option>
                                             </select>
                                         </div>
                                     </div>
@@ -51,7 +51,20 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="">Judul Pelatihan</label>
-                                            <input class="form-control" type="text">
+                                            <input name="judul" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Metode Penyelenggaraan</label>
+                                            <select class="custom-select" name="metode_penyelenggaraan" id="">
+                                                <option value="">Pilih salah satu</option>
+												<?php foreach ($metode as $data) { ?>
+													<option value="<?php echo $data->metode; ?>"><?php echo $data->metode; ?> </option>
+												<?php } ?>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -72,8 +85,8 @@
                                             <label for="">Jenis Kompetensi</label>
                                             <select class="custom-select" name="jenis_kompetensi" id="">
                                                 <option value="">Pilih salah satu</option>
-                                                <option value="">1</option>
-                                                <option value="">2</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
                                             </select>
                                         </div>
                                     </div>
@@ -148,10 +161,24 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
+                                            <label for="">No. Telp Vendor</label>
+                                            <input type="text" class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Alamat Vendor</label>
+                                            <input type="text" class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
                                             <label for="">Metode Pemilihan Vendor</label>
                                             <select name="pemilihan_vendor" id="" class="form-control">
                                                 <option value="">Pilih salah satu</option>
-                                                <?php foreach ($metode as $data) { ?>
+                                                <?php foreach ($pemilihan as $data) { ?>
                                                 <option value="<?php echo $data->metode; ?>"><?php echo $data->metode; ?> </option>
                                                 <?php } ?>
                                             </select>
@@ -160,7 +187,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label for="">Jumlah Peserta</label>
-                                            <input class="form-control" type="number">
+                                            <input name="jumlah_peserta" class="form-control" type="number">
                                         </div>
                                     </div>
                                 </div>
@@ -168,7 +195,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="">Catatan</label>
-                                            <textarea class="form-control" name="" id="" cols=20 rows="1"></textarea>
+                                            <textarea name="catatan" class="form-control" id="" cols=20 rows="1"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -426,8 +453,8 @@
                             <div class="card-footer">
                                 <div class="btn-group float-right">
                                     <button type="button" class="btn btn-default float-right" onClick="javascript:history.back()">Back</button>
-                                    <button type="submit" class="btn btn-success" style="background-color:#1a9e38; border-color:#1a9e38;">Save Draft</button>
-                                    <button type="submit" class="btn btn-primary" style="background-color:#273b7a; border-color:#273b7a">Submit</button>
+                                    <button type="submit" name="save" value="save" class="btn btn-success" style="background-color:#1a9e38; border-color:#1a9e38;">Save Draft</button>
+                                    <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary" style="background-color:#273b7a; border-color:#273b7a">Submit</button>
                                 </div>
                             </div>
                         </div>
