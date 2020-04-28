@@ -53,7 +53,7 @@
 										<td width="5%"><?php echo $n; ?></td>
 										<td width="20%"><?php echo $data->nomor_ro; ?></td>
 										<td width="20%"><?php echo $data->kategori_pelatihan; ?></td>
-										<td width="20%"><?php echo $data->judul; ?></td>
+										<td width="20%"><?php echo $data->judul_pelatihan; ?></td>
 										<td width="10%"><?php echo $data->tanggal_mulai; ?></td>
 										<td width="10%"><?php echo $data->tanggal_selesai; ?></td>
 										<td width="10%"><?php echo $data->pengirim_ro; ?></td>

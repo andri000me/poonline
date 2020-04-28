@@ -15,8 +15,8 @@ class Inhouse_training extends CI_Controller{
 	}
  
 	public function index() {
-        
-        $this->load->view('request/v_home_inhouse_training');
+        $data['submit'] = $this->Training_model->get_all_submit_inhouse();
+        $this->load->view('request/v_home_inhouse_training', $data);
     }
 
     public function create_training(){
