@@ -76,7 +76,7 @@ class Public_training extends CI_Controller{
         }else{
             $data['bidang'] = $this->Kompetensi_bidang_model->get_bidang();
             $data['metode'] = $this->Metode_penyelenggaraan_model->get_metode();
-            $data['vendor_name'] = $this->Vendor_model->get_vendor_name();
+            $data['nama_vendor'] = $this->Vendor_model->get_vendor_name();
             $data['provinsi'] = $this->Wilayah_model->get_all_provinsi();
             $data['kota'] = $this->Wilayah_model->get_all_kota();
             $this->load->view('request/v_add_public_training',$data);

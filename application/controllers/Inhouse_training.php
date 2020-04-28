@@ -52,7 +52,7 @@ class Inhouse_training extends CI_Controller{
         }else{
             $data['bidang'] = $this->Kompetensi_bidang_model->get_bidang();
             $data['metode'] = $this->Metode_penyelenggaraan_model->get_metode();
-            $data['nama_vendor'] = $this->Vendor_model->get_all_vendor();
+            $data['nama_vendor'] = $this->Vendor_model->get_vendor_name();
             $data['metode'] = $this->P_vendor_model->get_metode();
             $data['provinsi'] = $this->Wilayah_model->get_all_provinsi();
             $this->load->view('request/v_add_inhouse_training',$data);

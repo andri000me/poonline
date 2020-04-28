@@ -11,7 +11,6 @@
         <div class="row mb-2">
 			<div class="col-sm-6">
 				<h1>Public Training</h1>
-                <h1></h1>
 			</div>
         </div>
       </div>
@@ -41,6 +40,7 @@
                                         <div class="form-group">
                                             <label for="">Kategori Pelatihan</label>
                                             <select class="custom-select" name="kategori_pelatihan" id="">
+                                                <option value="">Pilih salah satu</option>
                                                 <option class="form-control" value="TC">Technical</option>
                                                 <option class="form-control" value="MG">Managerial</option>
                                                 <option class="form-control" value="CL">Cultural</option>
@@ -140,11 +140,11 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Vendor Peneyelenggara</label>
+                                            <label for="">Vendor Penyelenggara</label>
                                             <select class="custom-select" name="vendor_penyelenggara" id="">
                                                 <option value="">Pilih salah satu</option>
-                                                <?php foreach ($vendor_name as $_vendor_name) { ?>
-                                                <option value="<?php echo $_vendor_name->vendor_name; ?>"><?php echo $_vendor_name->vendor_name; ?> </option>
+                                                <?php foreach ($nama_vendor as $data) { ?>
+                                                <option value="<?php echo $data->vendor_name; ?>"><?php echo $data->vendor_name; ?> </option>
                                                 <?php } ?>
                                             </select>
                                         </div>

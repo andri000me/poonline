@@ -27,32 +27,23 @@
                                 <h3 class="card-title"><i class="nav-icon fas fa-briefcase">  Data Pelatihan</i></h3>
                             </div>
                             <div class="card-body">
+                                <input name="pengirim_ro" type="hidden" value="<?php echo $this->session->userdata('username')?>">
                                 <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="">Nomor</label>
+                                            <input name="nomor" class="form-control" type="text">
+                                        </div>
+                                    </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <label for="">Kategori Training</label>
-                                            <select name="" id="" class="custom-select">
+                                            <label for="">Kategori Pelatihan</label>
+                                            <select name="kategori_pelatihan" id="" class="custom-select">
                                                 <option value="">Pilih salah satu</option>
                                                 <option value="">TC, Teknikal</option>
                                                 <option value="">MG, Managerial</option>
                                                 <option value="">CL, Culture</option>
                                             </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="">Jenis Training</label>
-                                            <select name="" id="" class="custom-select" disabled>
-                                                <option value="">Pilih salah satu</option>
-                                                <option value="">PT, Public Training</option>
-                                                <option value="">IT, In-House Training</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="">Nomor RO</label>
-                                            <input class="form-control" type="text" disabled> 
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +70,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Jenis Kompetensi</label>
-                                            <select class="custom-select" name="" id="">
+                                            <select class="custom-select" name="jenis_kompetensi" id="">
                                                 <option value="">Pilih salah satu</option>
                                                 <option value="">1</option>
                                                 <option value="">2</option>
@@ -95,7 +86,7 @@
                                                 <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                                 </div>
-                                                <input name="tanggal_mulai" type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                                <input name="tanggal_mulai" type="date" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +97,7 @@
                                                 <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                                 </div>
-                                                <input name="tanggal_selesai" type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                                <input name="tanggal_selesai" type="date" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -139,18 +130,18 @@
                                 <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Tempat</label>
-                                            <input class="form-control" type="text" placeholder="Tempat Lokasi Training" >
+                                            <input name="tempat" class="form-control" type="text" placeholder="Tempat Lokasi Training" >
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Vendor Peneyelengara</label>
-                                            <select class="custom-select" name="vendors" id="">
+                                            <label for="">Vendor Penyelenggara</label>
+                                            <select class="custom-select" name="vendor_penyelenggara" id="">
                                                 <option value="">Pilih salah satu</option>
-                                                <?php foreach ($nama_vendor as $_nama_vendor) { ?>
-                                                <option value="<?php echo $_nama_vendor->vendor_name; ?>"><?php echo $_nama_vendor->vendor_name; ?> </option>
+                                                <?php foreach ($nama_vendor as $data) { ?>
+                                                <option value="<?php echo $data->vendor_name; ?>"><?php echo $data->vendor_name; ?> </option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -158,7 +149,12 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Metode Pemilihan Vendor</label>
-                                            <input class="form-control" type="text" placeholder="Dynamic Content">
+                                            <select name="pemilihan_vendor" id="" class="form-control">
+                                                <option value="">Pilih salah satu</option>
+                                                <?php foreach ($metode as $data) { ?>
+                                                <option value="<?php echo $data->metode; ?>"><?php echo $data->metode; ?> </option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -325,7 +321,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                                             </div>
                                         </div>
                                     </div>
@@ -336,7 +332,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">$.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input type="text" class="form-control" id="kurs" aria-describedby="basic-addon3">
                                             </div>
                                         </div>
                                     </div>
@@ -347,7 +343,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="konversi" aria-describedby="basic-addon3">
                                             </div>
                                         </div>
                                     </div>
@@ -362,7 +358,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                                             </div>
                                         </div>
                                     </div>
@@ -373,7 +369,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">$.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input type="text" class="form-control" id="kurs" aria-describedby="basic-addon3">
                                             </div>
                                         </div>
                                     </div>
@@ -384,7 +380,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="konversi" aria-describedby="basic-addon3">
                                             </div>
                                         </div>
                                     </div>
@@ -399,7 +395,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                                             </div>
                                         </div>
                                     </div>
@@ -410,7 +406,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">$.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input type="text" class="form-control" id="kurs" aria-describedby="basic-addon3">
                                             </div>
                                         </div>
                                     </div>
@@ -421,7 +417,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="konversi" aria-describedby="basic-addon3">
                                             </div>
                                         </div>
                                     </div>

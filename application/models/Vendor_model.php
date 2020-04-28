@@ -18,10 +18,12 @@
         $output = $this->db->insert('vendors',$data);
         return $output;
     }
+
     function get_vendor_name(){
         $query=$this->db->query("SELECT vendor_name FROM vendors");
         return $query->result();
     }
+    
     function get_edit_vendor($id){
        $query=$this->db->query("SELECT * from vendors where id='$id'");
         return $query->result();
