@@ -1,0 +1,18 @@
+aplikasi EAP notulen
+
+#terdapat 3 role
+#system sudah dapat melakukan cancel dan reschedule
+#jika sudah dicancel, sebaiknya membuat appointment baru
+#muncul notif apabila dicancel, pemberitahuan notif via email
+#catatan tatap muka, telepon, chat. tambah kolom media komunikasi.
+#tampilan dibuat minimalis dan simple.
+#tambah button assign. dari koordiantor yang dapat mengassign psikolog.
+#muncul notif assign apabila psikolog ganti.
+#menu dmasukan dalam menu reschedule (resechedule dan reassign).
+#untuk hal yang mendetail bisa via chat/whatsapp
+#history konseling satu orang dengan banyak aktifitas.
+#menambah total partisipan dan jenis kelamin dalam chart dalam satu tahun perbulan.
+#satuan kerja pada appointment perlu diperbaiki.
+#perlu penambahan ttd elektronik untuk keperluan tagihan
+#menambah kolom isu pada struktur appointment
+#pekerja yang share isu tersebut ke HCM 2 kolom (nanti tampil di role HI)

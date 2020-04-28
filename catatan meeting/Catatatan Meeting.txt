@@ -1,0 +1,46 @@
+Meeting HCIS dengan LM
+
+memindahkan beberapa proses by email menjadi otomatis by system
+pengirim email dari pihak perkasa
+ jenis training ada 2
+ 1. public training (umum)
+ 2. inhouse training (pegawai pgn)
+hasil approval hcm di upload oleh admin hcm
+
+- nomor overing mengenerates sebuah kode menghubungkan aplikasi dengan perfecto
+- dalam form butuh kategori biaya yg terbagi menjadi 3 mata uang rupiah dan kurs dolar
+- step 1 nama pelatihan dan nomor dari perfecto
+- kalo bisa input juga prognosa kegiatan pelatihan dan akan diupdate jika kegiatan telah terlaksana atau menggunakan dua kolom prognosa dan realisasi 
+-input kurs USD saat realisasi menggunakan manual 
+-status 
+   + sudah terlaksana tapi belum terinvoice
+  + sudah terlaksana tapi belum terinvoice
+popay (paperless oninle payment): aplikasi perbendaharaan pgn
+ - internal & eksternal
+
+1. hal request training 
+2. hal prognosa kegiatan pelatihan 
+3. hal realisasi (input data peserta dengan add dari db, disediakan pula free text untuk data yang tidak ada di oracle)
+page pelatihan 
+ + penambahan kolom kompetensi dan jenis kompetensi teknis dan manajerial
+  
+
+satu page untuk peserta untuk registrasi seperti slidu menggunakan barcode
+untuk data user pegawai pgn langsunng ambil dari api dan untuk user diluar pegawai pgn mengguakan free text. 
+ - nama satuan kerja di perusahaan pusat + unit kerja
+ - jabatan
+ - area
+ - nama anak perusahaan 
+personal manday akan melekat ke data peserta sedangkan manday meelekat ke kegiatan
+realisasi peserta tidak diambil dari perfecto karena hanya sedikit yang bisa  
+
+biaya per pelatihan ( breakdown lengkap)
+rekap biaya ( total biaya keseluruhan)
+
+rule hanya dua untuk admin hcm dan admin perkasa
+report yang dibutuhkan 
+data yang dimigrasi dari 2020 
+
+report diminta perbulan atau triwulan
+point penting mandays atau personal mandays
+registrasi peserta sudah melalui perfecto

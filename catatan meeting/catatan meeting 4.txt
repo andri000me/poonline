@@ -1,0 +1,17 @@
+# metode penambahan peserta seperti jadwal piket PGN
+# untuk penambahan peserta other tidak melalui API
+# penammbahan peserta other tidak digenerate by system
+# isian data peserta pgn generate by system selain nama dan contructure
+# typo constructure
+# rincian biaya pihak perkasa yang mengisi
+# pihak hcm dapat merevisi dan melihat rincian biaya
+# rician biaya publik training dan inhouse training tampilkan semua.
+# biaya pelatihan pihak hcm
+#Inhouse Training:
+Diisi oleh admin HCM: Biaya Pelatihan
+Diisi oleh Perkasa: Biaya Akomodasi dan PPD
+*SPPD
+Public Training: Seluruh komponen biaya diisi oleh Perkasa
+untuk tulisan tanda bintang
+*wajib diisi oleh penyelenggara pelatihan
+# bahasan meeting selanjutnya reply RO user Perkasa

@@ -1,0 +1,80 @@
+meeting  ke dua dengan LKM
+#role : perkasa dan hcm (suad)
+create Request (PT, IT, MG, CL) kategori pelatihan hanya sebagai isian text dan key tetap id dan digenerate setelah submit
+#-menu manjemen user berisi add,edit, dan delete untuk menambahkan user
+-nomor RO (generate dari system dengan the next number)
+(TCITxxxx adalah inhouse dan TCPTxxxx adalah public training)
+Create RO : AABBCCCC
+#AA : Kategori Training (Teknikal : TC, managerial : MG, Culture : CL)
+#BB : public (PT) / inhouse (IT)
+CCCC : auto increment dari AABB
+-penambahan isian kategori pelatihan di form po admin hcm
+-pengirim po dihapus dan diganti isian otomatis yang masuk kedalam tabel dengan admin yang sedang aktif
+#-PO diganti menjadi RO
+-metode penyelenggara (swakelola, pihak ketiga) ketika metodenya  swakelola tidak akan mengirim email notifikasi ke pihak ketiga
+-ada menu administrasi didalmanya ada menu manajemen user dan master kompetensi bidang.
+-judul, dan tempat pelatihan diperkecil
+- ada penambahan free text untuk kota dan tempat adalah lokasi pasti pelaksanaan
+-kompetensi dibuat database dengan isian (technis/manajerial)
+-penempatan kompetensi ditukar dengan kompetensi bidang
+-kompetensi = induk dan kompmetensi bidang adalah anaknya.
+-isian kompetensi dibuat satu line dengan kuncinya adalah kompetensi bidang
+-nama peserta itu dynamic dan autofill kedalam isian nipg,jabatan,satuan kerja, direktorat, dan require to fill contructure yang berbentuk dropdown list.
+- constructure berbentuk dropdown (90200(Niaga LNG), 90300 (niaga), 90400(distribusi), 90500 (transmisi), 90600 administrasi dan umum.)
+-dibagian peserta dibuat dua buah kolom yakni pegawai dan other tapi outputnya nanti digabung
+- dibagi menjadi sub form data pelatihan, data peserta, biaya.
+- biaya dalam bentuk form dan diberi centang untuk opsi keseluruhan dan perseorangan 
+- rencana biaya berisi tiga isian yakni biaya pelatihan(instruktur), akomodasi(konsumsi, transportasi dan penginapan), sppd. dengan isian rupiah, kurs, dan konfersi kurs dolar
+-kurs pada waktu request tersimpan didatabe
+-ada field untuk kurs
+kurs dolar akan disimpan saat form disubmit 
+-sediakan dua button yakni save as draft dan submit
+-ketika kita menambahkan orang maka contructureya manual.
+-kurs untuk prognosa menggunakan api google dan untuk realisasi menggunakan freetext
+- field catatan masuknya kedalam sub form data pelatihan
+-semual file yang di upload adalah all image, all pdf dan all word dan masuk kedalam sub form data pelatihan
+
+
+IT
+-vendor penyelenggara itu bisa dari luar pgn dan berbentuk dynamic
+-pic user adlah orang pgn yang mengusulkan training
+- catatan, dan tor kak masuk kedalam sub form data pelatiahan
+- ada vendor penyelenggara di data master
+
+Reply
+ketika muncul perkas yang keluar adalah list RO yang masuk dalam bentuk table (judul, jenis pelatihan, tangal mulai, metode penunjukan vendor
+buat master metode penunjukan vendor
+menggunakan button save bukan submit. 
+
+
+fungsi untuk perkasa
+1. asign untuk siapa yang mengisi
+2. nomor offering  free text
+pic perkasa = list user perkasa (nomor hp, email)
+3. it dan pt dijadikan satu form saja yang penting jenis trainingnya terlihat jelas.
+penambahan taks list untuk konfirmasi email ke peserta 
+
+
+taks list perkasa
+- konfirmasi peserat
+
+
+taks list hcm
+-
+
+isian konfirmasi peserta untuk admin hcm tanpa pic perkasa
+realisasi itu berbentuk taks list
+
+taks list untuk perkasa
+reply po
+konfirmasi peserta -> send email
+input realisasi peserta dan bisa ada tombol crud (tombol edit untuk mengubah nama, tangal muali dan tangal selesai)
+input realisasi biaya
+
+taks list untuk swakelola
+konfirmasi peserta -> send email
+input realisasi peserta dan bisa ada tombol crud (tombol edit untuk mengubah nama, tangal muali dan tangal selesai)
+input realisasi biaya (baru bisa diisi setelah realiasi peserta diinput)
+
+
+table transaksi bersifat statis
