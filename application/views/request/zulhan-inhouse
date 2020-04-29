@@ -6,19 +6,19 @@
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-	<section class="content-header">
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-			<div class="col-sm-6">
-				<h1>In-House Training</h1>
-			</div>
+            <div class="col-sm-6">
+                <h1>In-House Training</h1>
+            </div>
         </div>
       </div>
     </section>
-	<!-- Main content -->
-	<!-- Form Data Pelatihan-->
-	<section class="content">
-		<div class="container-fluid">
+    <!-- Main content -->
+    <!-- Form Data Pelatihan-->
+    <section class="content">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <form role="form" action="<?php echo base_url(). 'Inhouse_training/create_training'; ?>" method="post">
@@ -61,9 +61,9 @@
                                             <label for="">Metode Penyelenggaraan</label>
                                             <select class="custom-select" name="metode_penyelenggaraan" id="">
                                                 <option value="">Pilih salah satu</option>
-												<?php foreach ($metode as $data) { ?>
-													<option value="<?php echo $data->metode; ?>"><?php echo $data->metode; ?> </option>
-												<?php } ?>
+                                                <?php foreach ($metode as $data) { ?>
+                                                    <option value="<?php echo $data->metode; ?>"><?php echo $data->metode; ?> </option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -73,10 +73,10 @@
                                         <div class="form-group">
                                             <label for="">Kompetensi Bidang</label>
                                             <select class="custom-select" name="kompetensi_bidang" id="">
-                                                	<option value="">Pilih salah satu</option>
-												<?php foreach ($bidang as $_bidang) { ?>
-													<option value="<?php echo $_bidang->bidang; ?>"><?php echo $_bidang->bidang; ?> </option>
-												<?php } ?>
+                                                    <option value="">Pilih salah satu</option>
+                                                <?php foreach ($bidang as $_bidang) { ?>
+                                                    <option value="<?php echo $_bidang->bidang; ?>"><?php echo $_bidang->bidang; ?> </option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -127,7 +127,7 @@
                                             </select>
                                         </div>
                                     </div>
-									<div class="col-md-4">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Kota/Kabupaten</label>
                                             <select class="custom-select" name="kota" id="">
@@ -326,7 +326,7 @@
                                                 <option class="form-control" value="">90400 (Distribusi)</option>
                                                 <option class="form-control" value="">90500 (Transimis)</option>
                                                 <option class="form-control" value="">90600 (Administrasi dan Umum)</option>
-						                    </select>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -461,8 +461,8 @@
                     </form>
                 </div>
             </div>
-		</div>
-	</section>
+        </div>
+    </section>
 </div>
 <?php $this->load->view('template/footer'); ?>
 <script>
@@ -492,6 +492,3 @@
     }
 </script>
 </body>
-
-
-
