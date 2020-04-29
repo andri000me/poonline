@@ -348,7 +348,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="tb_pelatihan" >
                                             </div>
                                         </div>
                                     </div>
@@ -359,7 +359,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">$.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="kurs" aria-describedby="basic-addon3">
+                                                <input type="text" class="form-control" id="a.kurs" onkeyup="pelatihan()">
                                             </div>
                                         </div>
                                     </div>
@@ -370,7 +370,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="konversi" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="a.konversi" onkeyup="pelatihan()">
                                             </div>
                                         </div>
                                     </div>
@@ -385,7 +385,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="tb_akomodasi" >
                                             </div>
                                         </div>
                                     </div>
@@ -396,7 +396,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">$.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="kurs" aria-describedby="basic-addon3">
+                                                <input type="text" class="form-control" id="b.kurs" onkeyup="akomodasi()">
                                             </div>
                                         </div>
                                     </div>
@@ -407,7 +407,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="konversi" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="b.konversi" onkeyup="akomodasi()">
                                             </div>
                                         </div>
                                     </div>
@@ -422,7 +422,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="tb_sppd" >
                                             </div>
                                         </div>
                                     </div>
@@ -433,7 +433,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">$.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="kurs" aria-describedby="basic-addon3">
+                                                <input type="text" class="form-control" id="c.kurs" onkeyup="sppd()">
                                             </div>
                                         </div>
                                     </div>
@@ -444,7 +444,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="konversi" aria-describedby="basic-addon3">
+                                                <input name="" type="text" class="form-control" id="c.konversi" onkeyup="sppd()">
                                             </div>
                                         </div>
                                     </div>
@@ -467,11 +467,27 @@
 <?php $this->load->view('template/footer'); ?>
 <script>
     function pelatihan() {
-      var txtFirstNumberValue = document.getElementById('kurs').value;
-      var txtSecondNumberValue = document.getElementById('konversi').value;
+      var txtFirstNumberValue = document.getElementById('a.kurs').value;
+      var txtSecondNumberValue = document.getElementById('a.konversi').value;
       var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
       if (!isNaN(result)) {
          document.getElementById('tb_pelatihan').value = result ;
+      }
+    }
+    function akomodasi() {
+      var txtFirstNumberValue = document.getElementById('b.kurs').value;
+      var txtSecondNumberValue = document.getElementById('b.konversi').value;
+      var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
+      if (!isNaN(result)) {
+         document.getElementById('tb_akomodasi').value = result ;
+      }
+    }
+    function sppd() {
+      var txtFirstNumberValue = document.getElementById('c.kurs').value;
+      var txtSecondNumberValue = document.getElementById('c.konversi').value;
+      var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
+      if (!isNaN(result)) {
+         document.getElementById('tb_sppd').value = result ;
       }
     }
 </script>
