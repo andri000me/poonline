@@ -45,7 +45,7 @@ class Inhouse_training extends CI_Controller{
             $pengirim_ro = $this->input->post('pengirim_ro');
             $_kategori_pelatihan = $this->input->post('kategori_pelatihan');
             $kategori_pelatihan = kategori($_kategori_pelatihan);
-            $jenis_training = "PT";
+            $jenis_training = "IT";
             $nomor = num($this->input->post('nomor'));
             $nomor_ro = $_kategori_pelatihan.$jenis_training.$nomor;
             $sql = $this->db->query("SELECT * FROM public_training where nomor_ro = '$nomor_ro' ");

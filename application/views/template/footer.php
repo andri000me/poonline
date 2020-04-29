@@ -42,10 +42,9 @@
 <script>
   $(function () {
     $('#example').DataTable( {
-        "scrollX": true,
-        "autoWidth": false
     } );
-    $("#example1").DataTable();
+    $("#example1").DataTable( {
+    } );
     $('#example2').DataTable({
       "scrollX": true,
       "paging": true,

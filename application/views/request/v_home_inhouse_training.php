@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>In-House Trainig</h1>
+            <h1>In-House Training</h1>
           </div>
         </div>
       </div>
