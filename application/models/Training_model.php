@@ -51,7 +51,8 @@ class Training_model extends CI_Model{
     function add_inhouse_training(
         $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, 
         $jenis_kompetensi, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, 
-        $pemilihan_vendor, $jumlah_peserta, $catatan, $active
+        $pemilihan_vendor, $jumlah_peserta, $catatan, $active, $biaya_pelatihan, $biaya_pelatihan_konver, $biaya_akomodasi,
+        $biaya_akomodasi_konver, $biaya_sppd, $biaya_sppd_konver
     ){
         $data = array(
             'pengirim_ro' => $pengirim_ro,
@@ -70,6 +71,12 @@ class Training_model extends CI_Model{
             'metode_pemilihan_vendor' => $pemilihan_vendor,
             'jumlah_peserta' => $jumlah_peserta, 
             'catatan' => $catatan,
+            'biaya_pelatihan' => $biaya_pelatihan,
+            'biaya_pelatihan_konver' => $biaya_akomodasi_konver,
+            'biaya_akomodasi' => $biaya_akomodasi,
+            'biaya_akomodasi_konver' => $biaya_akomodasi_konver,
+            'biaya_sppd' => $biaya_sppd,
+            'baiaya_sppd_konver' => $biaya_sppd_konver,
             //'form_usulan' => $form_usulan,
             //'brosur' => $brosur,
             'active' => $active

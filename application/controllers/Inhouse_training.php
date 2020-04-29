@@ -67,10 +67,17 @@ class Inhouse_training extends CI_Controller{
                 $jumlah_peserta = $this->input->post('jumlah_peserta');
                 $catatan = $this->input->post('catatan');
                 $active = '0';
+                $biaya_pelatihan = $this->input->post('biaya_pelatihan');
+                $biaya_pelatihan_konver = $this->input->post('biaya_pelatihan_konver');
+                $biaya_akomodasi = $this->input->post('biaya_akomodasi');
+                $biaya_akomodasi_konver = $this->input->post('biaya_akomodasi_konver');
+                $biaya_sppd = $this->input->post('biaya_sppd');
+                $biaya_sppd_konver = $this->input->post('biaya_sppd_konver');
                 $data = $this->Training_model->add_inhouse_training(
                     $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, 
                     $jenis_kompetensi, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, 
-                    $pemilihan_vendor, $jumlah_peserta, $catatan, $active
+                    $pemilihan_vendor, $jumlah_peserta, $catatan, $active, $biaya_pelatihan, $biaya_pelatihan_konver, $biaya_akomodasi,
+                    $biaya_akomodasi_konver, $biaya_sppd, $biaya_sppd_konver
                 );
             }
                 redirect('Inhouse_training');
