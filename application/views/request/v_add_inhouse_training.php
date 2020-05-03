@@ -80,16 +80,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="">Jenis Kompetensi</label>
-                                            <select class="custom-select" name="jenis_kompetensi" id="">
-                                                <option value="">Pilih salah satu</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
