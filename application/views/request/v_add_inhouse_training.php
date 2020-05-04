@@ -128,14 +128,12 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                         <div class="form-group">
                                             <label for="">Tempat</label>
                                             <input name="tempat" class="form-control" type="text" placeholder="Tempat Lokasi Training" required>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Vendor Penyelenggara</label>
@@ -147,24 +145,13 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="">No. Telp Vendor</label>
-                                            <input type="text" class="form-control" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="">Alamat Vendor</label>
-                                            <input type="text" class="form-control" disabled>
-                                        </div>
-                                    </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Metode Pemilihan Vendor</label>
-                                            <select name="pemilihan_vendor" id="" class="form-control" required>
+                                            <select name="metode_pemilihan_vendor" id="" class="form-control" required>
                                                 <option value="">Pilih salah satu</option>
                                                 <?php foreach ($pemilihan as $data) { ?>
                                                 <option value="<?php echo $data->metode; ?>"><?php echo $data->metode; ?> </option>
@@ -178,23 +165,21 @@
                                             <input name="jumlah_peserta" class="form-control" type="number" required>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <label for="">Catatan</label>
-                                            <textarea name="catatan" class="form-control" id="" cols=20 rows="1"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">TOR/KAK</label>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input" id="customFile">
                                                 <label class="custom-file-label" for="customFile">Choose file</label>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label for="">Catatan</label>
+                                            <textarea name="catatan" class="form-control" id="" cols=20 rows="1"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -320,6 +305,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title"><i class="nav-icon fas fa-wallet">  Rincian Biaya Pelatihan</i></h3>
@@ -335,7 +321,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="tb_pelatihan" disabled>
+                                                <input name="tb_pelatihan" type="text" class="form-control" id="tb_pelatihan" >
                                             </div>
                                         </div>
                                     </div>
@@ -346,7 +332,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">$.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="a.kurs" onkeyup="pelatihan()" required>
+                                                <input name="kurs_pelatihan" type="text" class="form-control" id="a.kurs" onkeyup="pelatihan()" required>
                                             </div>
                                         </div>
                                     </div>
@@ -357,7 +343,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="a.konversi" onkeyup="pelatihan()" required>
+                                                <input name="konversi_pelatihan" type="text" class="form-control" id="a.konversi" onkeyup="pelatihan()" required>
                                             </div>
                                         </div>
                                     </div>
@@ -372,7 +358,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="tb_akomodasi" disabled="">
+                                                <input name="tb_akomodasi" type="text" class="form-control" id="tb_akomodasi" >
                                             </div>
                                         </div>
                                     </div>
@@ -383,7 +369,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">$.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="b.kurs" onkeyup="akomodasi()" required>
+                                                <input name="kurs_akomodasi" type="text" class="form-control" id="b.kurs" onkeyup="akomodasi()" required>
                                             </div>
                                         </div>
                                     </div>
@@ -394,7 +380,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="b.konversi" onkeyup="akomodasi()" required>
+                                                <input name="konversi_akomodasi" type="text" class="form-control" id="b.konversi" onkeyup="akomodasi()" required>
                                             </div>
                                         </div>
                                     </div>
@@ -409,7 +395,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="tb_sppd" disabled>
+                                                <input name="tb_sppd" type="number" class="form-control" id="tb_sppd" >
                                             </div>
                                         </div>
                                     </div>
@@ -420,7 +406,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">$.</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="c.kurs" onkeyup="sppd()" required>
+                                                <input name="kurs_sppd" type="text" class="form-control" id="c.kurs" onkeyup="sppd()" required>
                                             </div>
                                         </div>
                                     </div>
@@ -431,7 +417,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="" type="text" class="form-control" id="c.konversi" onkeyup="sppd()" required>
+                                                <input name="konversi_sppd" type="text" class="form-control" id="c.konversi" onkeyup="sppd()" required>
                                             </div>
                                         </div>
                                     </div>
@@ -440,7 +426,7 @@
                             <div class="card-footer">
                                 <div class="btn-group float-right">
                                     <button type="button" class="btn btn-default float-right" onClick="javascript:history.back()">Back</button>
-                                    <button type="submit" name="save" value="save" id="save" class="btn btn-success" style="background-color:#1a9e38; border-color:#1a9e38;">Save Draft</button>
+                                    <button type="submit" name="save" value="save" class="btn btn-success" style="background-color:#1a9e38; border-color:#1a9e38;">Save Draft</button>
                                     <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary" style="background-color:#273b7a; border-color:#273b7a">Submit</button>
                                 </div>
                             </div>
@@ -454,31 +440,28 @@
 <?php $this->load->view('template/footer'); ?>
 <script>
     function pelatihan() {
-      var txtFirstNumberValue = document.getElementById('tb_pelatihan').value;
-      var txtSecondNumberValue = document.getElementById('kurs').value;
-      var result = parseInt(txtFirstNumberValue) / parseInt(txtSecondNumberValue);
+      var txtFirstNumberValue = document.getElementById('a.kurs').value;
+      var txtSecondNumberValue = document.getElementById('a.konversi').value;
+      var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
       if (!isNaN(result)) {
-         document.getElementById('a.konversi').value = result ;
+         document.getElementById('tb_pelatihan').value = result ;
       }
     }
     function akomodasi() {
-      var txtFirstNumberValue = document.getElementById('tb_akomodasi').value;
-      var txtSecondNumberValue = document.getElementById('kurs').value;
-      var result = parseInt(txtFirstNumberValue) / parseInt(txtSecondNumberValue);
+      var txtFirstNumberValue = document.getElementById('b.kurs').value;
+      var txtSecondNumberValue = document.getElementById('b.konversi').value;
+      var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
       if (!isNaN(result)) {
-         document.getElementById('b.konversi').value = result ;
+         document.getElementById('tb_akomodasi').value = result ;
       }
     }
     function sppd() {
-      var txtFirstNumberValue = document.getElementById('tb_sppd').value;
-      var txtSecondNumberValue = document.getElementById('kurs').value;
-      var result = parseInt(txtFirstNumberValue) / parseInt(txtSecondNumberValue);
+      var txtFirstNumberValue = document.getElementById('c.kurs').value;
+      var txtSecondNumberValue = document.getElementById('c.konversi').value;
+      var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
       if (!isNaN(result)) {
-         document.getElementById('c.konversi').value = result ;
+         document.getElementById('tb_sppd').value = result ;
       }
     }
 </script>
 </body>
-
-
-
