@@ -166,7 +166,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Jumlah Peserta</label>
-                                            <input name="jumlah_peserta" class="form-control" type="number">
+                                            <input name="jumlah_peserta" class="form-control" type="text">
                                         </div>
                                     </div>
                                 </div>
@@ -174,7 +174,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="">Catatan</label>
-                                            <textarea name="catatan" class="form-control" id="" cols=20 rows="1"></textarea>
+                                            <textarea name="catatan" class="form-control" type="text" id="" cols=20 rows="1"></textarea>
                                         </div>
                                     </div>
                                 </div>
