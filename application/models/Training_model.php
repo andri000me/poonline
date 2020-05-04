@@ -18,17 +18,17 @@ class Training_model extends CI_Model{
         $data = array(
             'pengirim_ro' => $pengirim_ro,
             'nomor_ro' => $nomor_ro,
-            'kategori_pelatihan' => $kategori_pelatihan, 
+            'kategori_pelatihan' => $kategori_pelatihan,
             'judul' => $judul,
             'metode_penyelenggaraan' => $metode_penyelenggaraan,
             'kompetensi_bidang' => $kompetensi_bidang,
             'tanggal_mulai' => $tanggal_mulai,
             'tanggal_selesai' => $tanggal_selesai,
             'provinsi' => $provinsi,
-            'kota' => $kota, 
-            'tempat' => $tempat, 
+            'kota' => $kota,
+            'tempat' => $tempat,
             'vendor_penyelenggara' => $vendor_penyelenggara,
-            'jumlah_peserta' => $jumlah_peserta, 
+            'jumlah_peserta' => $jumlah_peserta,
             'catatan' => $catatan,
             //'form_usulan' => $form_usulan,
             //'brosur' => $brosur,
@@ -118,12 +118,12 @@ class Training_model extends CI_Model{
             'active' => $active
         );
         $this->db->where('id', $id);
-        $output = $this->db->update('inhouse_training', $data);
+        $output = $this->db->update('public_training', $data);
         return $output;
     }
 
     function get_edit_public_training($id){
-        $query=$this->db->query('SELECT * FROM inhouse_training WHERE id="$id"');
+        $query=$this->db->query("SELECT * FROM public_training WHERE id='$id'");
         return $query->result();
     }
 }

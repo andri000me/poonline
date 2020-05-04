@@ -28,19 +28,20 @@
                             </div>
                             <!-- edited by zulhan -->
                             <div class="card-body">
+                                <?php var_dump($data[0]); ?>
                                 <input name="pengirim_ro" type="hidden" value="<?php echo $this->session->userdata('username')?>">
                                 <div class="row">
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label for="">Nomor</label>
-                                            <input name="nomor" class="form-control" type="text">
+                                            <input name="nomor" class="form-control" type="text" value="<?php echo $data[0]->nomor_ro ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Kategori Pelatihan</label>
                                             <select class="custom-select" name="kategori_pelatihan" id="">
-                                                <option value="">Pilih salah satu</option>
+                                                <option value="<?php echo $data[0]->kategori_pelatihan ?>"><?php echo $data[0]->kategori_pelatihan ?></option>
                                                 <option class="form-control" value="TC">Technical</option>
                                                 <option class="form-control" value="MG">Managerial</option>
                                                 <option class="form-control" value="CL">Cultural</option>
@@ -52,7 +53,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="">Judul Pelatihan</label>
-                                            <input class="form-control" type="text" name="judul">
+                                            <input class="form-control" type="text" name="judul" value="<?php echo $data[0]->judul ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +62,7 @@
                                         <div class="form-group">
                                             <label for="">Metode Penyelenggaraan</label>
                                             <select class="custom-select" name="metode_penyelenggaraan" id="">
-                                                <option value="">Pilih salah satu</option>
+                                                <option value="<?php echo $data[0]->metode_penyelenggaraan ?>"><?php echo $data[0]->metode_penyelenggaraan ?></option>
 												<?php foreach ($metode as $_metode) { ?>
 													<option value="<?php echo $_metode->metode; ?>"><?php echo $_metode->metode; ?> </option>
 												<?php } ?>
@@ -72,7 +73,7 @@
                                         <div class="form-group">
                                             <label for="">Kompetensi Bidang</label>
                                             <select class="custom-select" name="kompetensi_bidang" id="">
-                                                	<option value="">Pilih salah satu</option>
+                                                	<option value="<?php echo $data[0]->kompetensi_bidang ?>"><?php echo $data[0]->kompetensi_bidang ?></option>
 												<?php foreach ($bidang as $_bidang) { ?>
 													<option value="<?php echo $_bidang->bidang; ?>"><?php echo $_bidang->bidang; ?> </option>
 												<?php } ?>
@@ -88,7 +89,7 @@
                                                 <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                                 </div>
-                                                <input name="tanggal_mulai" type="date" class="form-control datepicker">
+                                                <input name="tanggal_mulai" type="date" class="form-control datepicker" value="<?php echo $data[0]->tanggal_mulai ?>" >
                                             </div>
                                         </div>
                                     </div>
@@ -99,7 +100,7 @@
                                                 <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                                 </div>
-                                                <input name="tanggal_selesai" type="date" class="form-control datepicker">
+                                                <input name="tanggal_selesai" type="date" class="form-control datepicker" value="<?php echo $data[0]->tanggal_selesai ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +110,7 @@
                                         <div class="form-group">
                                             <label for="">Provinsi</label>
                                             <select class="custom-select" name="provinsi" id="">
-                                                <option value="">Pilih Provinsi</option>
+                                                <option value="<?php echo $data[0]->provinsi ?>"><?php echo $data[0]->provinsi ?></option>
                                                 <?php foreach ($provinsi as $_provinsi) { ?>
                                                 <option value="<?php echo $_provinsi->provinsi; ?>"><?php echo $_provinsi->provinsi; ?> </option>
                                                 <?php } ?>
@@ -119,8 +120,8 @@
 									<div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Kota/Kabupaten</label>
-                                            <select class="custom-select" name="kota" id="">
-                                                <option value="">Pilih Kota/kabupaten</option>
+                                            <select class="custom-select" name="kota">
+                                                <option value="<?php echo $data[0]->kota ?>"><?php echo $data[0]->kota ?></option>
                                                 <?php foreach ($kota as $_kota) { ?>
                                                 <option value="<?php echo $_kota->kota; ?>"><?php echo $_kota->kota; ?> </option>
                                                 <?php } ?>
@@ -132,7 +133,7 @@
                                     <div class="col-md-7">
                                         <div class="form-group">
                                             <label for="">Tempat</label>
-                                            <input name="tempat" class="form-control" type="text" placeholder="Tempat Lokasi Training" >
+                                            <input name="tempat" class="form-control" type="text" placeholder="Tempat Lokasi Training" value="<?php echo $data[0]->tempat ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -142,7 +143,7 @@
                                         <div class="form-group">
                                             <label for="">Vendor Penyelenggara</label>
                                             <select class="custom-select" name="vendor_penyelenggara" id="">
-                                                <option value="">Pilih salah satu</option>
+                                                <option value="<?php echo $data[0]->vendor_penyelenggara ?>"><?php echo $data[0]->vendor_penyelenggara ?></option>
                                                 <?php foreach ($nama_vendor as $data) { ?>
                                                 <option value="<?php echo $data->vendor_name; ?>"><?php echo $data->vendor_name; ?> </option>
                                                 <?php } ?>
@@ -166,7 +167,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Jumlah Peserta</label>
-                                            <input name="jumlah_peserta" class="form-control" type="number">
+                                            <input name="jumlah_peserta" class="form-control" type="text" value="<?php echo $data[0]->jumlah_peserta ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -174,7 +175,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="">Catatan</label>
-                                            <textarea name="catatan" class="form-control" id="" cols=20 rows="1"></textarea>
+                                            <textarea name="catatan" class="form-control" cols=20 rows="1" value="<?php echo $data[0]->catatan ?>"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -203,7 +204,6 @@
                         
                         <div class="card">
                             <div class="card-header">
-
                             </div>
                             <div class="card-body">
                                 <a class="btn btn-info" style="background-color:#273b7a; border-color:#273b7a; margin-bottom:20pt "; href="#" class="nav-link">
@@ -230,6 +230,105 @@
 
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title"><i class="nav-icon fas fa-wallet">  Rincian Biaya Pelatihan</i></h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="">KURS</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">$.</span>
+                                                </div>
+                                                <input type="text" class="form-control" id="kurs" onkeyup="pelatihan()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h7>Biaya Pelatihan</h7>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Total Biaya</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                </div>
+                                                <input name="biaya_pelatihan" type="text" class="form-control" id="tb_pelatihan" onkeyup="pelatihan()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="">Konversi KURS</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                </div>
+                                                <input name="biaya_pelatihan_konver" type="text" class="form-control" id="a.konversi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h7>Biaya Akomodasi</h7>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Total Biaya</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                </div>
+                                                <input name="biaya_akomodasi" type="text" class="form-control" id="tb_akomodasi" onkeyup="akomodasi()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="">Konversi KURS</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                </div>
+                                                <input name="biaya_akomodasi_conver" type="text" class="form-control" id="b.konversi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h7>Biaya SPPD</h7>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Total Biaya</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                </div>
+                                                <input name="biaya_sppd" type="text" class="form-control" id="tb_sppd" onkeyup="sppd()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="">Konversi KURS</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                </div>
+                                                <input name="biaya_sppd_konver" type="text" class="form-control" id="c.konversi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <div class="btn-group float-right">

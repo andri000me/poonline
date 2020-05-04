@@ -113,8 +113,9 @@ class Public_training extends CI_Controller{
         }
     }
 
-    public function edit_public_training(){
+    public function edit_public_training($id){
         if ($this->input->post('submit')) {
+            $id = $this->input->post('id');
             $pengirim_ro = $this->input->post('pengirim_ro');
             $_kategori_pelatihan = $this->input->post('kategori_pelatihan');
             $kategori_pelatihan = kategori($_kategori_pelatihan);
@@ -138,14 +139,15 @@ class Public_training extends CI_Controller{
                 $jumlah_peserta = $this->input->post('jumlah_peserta');
                 $catatan = $this->input->post('catatan');
                 $active = '0';
-                $data = $this->Training_model->add_public_training(
-                    $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang,
+                $data = $this->Training_model->edit_public_training(
+                    $id, $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang,
                     $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $jumlah_peserta, 
                     $catatan, $active
                 );
             }
                 redirect('Public_training');
         }elseif($this->input->post('save')){
+            $id = $this->input->post('id');
             $pengirim_ro = $this->input->post('pengirim_ro');
             $_kategori_pelatihan = $this->input->post('kategori_pelatihan');
             $kategori_pelatihan = kategori($_kategori_pelatihan);
@@ -169,20 +171,21 @@ class Public_training extends CI_Controller{
                 $jumlah_peserta = $this->input->post('jumlah_peserta');
                 $catatan = $this->input->post('catatan');
                 $active = '1';
-                $data = $this->Training_model->add_public_training(
-                    $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang,
+                $data = $this->Training_model->edit_public_training(
+                    $id, $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang,
                     $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $jumlah_peserta, 
                     $catatan, $active
                 );
             }
                 redirect('Public_training');
         }else{
+            $data['data'] = $this->Training_model->get_edit_public_training($id);
             $data['bidang'] = $this->Kompetensi_bidang_model->get_bidang();
             $data['metode'] = $this->Metode_penyelenggaraan_model->get_metode();
             $data['nama_vendor'] = $this->Vendor_model->get_vendor_name();
             $data['provinsi'] = $this->Wilayah_model->get_all_provinsi();
             $data['kota'] = $this->Wilayah_model->get_all_kota();
-            $this->load->view('request/v_add_public_training',$data);
+            $this->load->view('request/v_edit_public_training', $data);
         }
     }
 }
