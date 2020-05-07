@@ -46,6 +46,7 @@ class Training_model extends CI_Model{
         $output = $this->db->insert('inhouse_training', $data);
         return $output;
     }
+    
     function get_edit_inhouse_training($id){
        $query=$this->db->query("SELECT * from inhouse_training where id='$id'");
         return $query->result();
