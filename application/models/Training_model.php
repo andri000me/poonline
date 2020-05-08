@@ -11,8 +11,7 @@ class Training_model extends CI_Model{
         return $query->result();
     }
 
-    function add_inhouse_training(
-        $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $tb_pelatihan, $kurs_pelatihan, $konversi_pelatihan, $tb_akomodasi, $kurs_akomodasi, $konversi_akomodasi, $tb_sppd, $kurs_sppd, $konversi_sppd
+    function add_inhouse_training( $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan, $konversi_pelatihan, $tb_akomodasi, $konversi_akomodasi, $tb_sppd, $konversi_sppd
     ){
         $data = array(
             'pengirim_ro' => $pengirim_ro,
@@ -33,25 +32,22 @@ class Training_model extends CI_Model{
             //'form_usulan' => $form_usulan,
             //'brosur' => $brosur,
             'active' => $active,
+            'kurs' => $kurs,
             'tb_pelatihan' => $tb_pelatihan,
-            'kurs_pelatihan' => $kurs_pelatihan,
             'konversi_pelatihan' => $konversi_pelatihan,
             'tb_akomodasi' => $tb_akomodasi,
-            'kurs_akomodasi' => $kurs_akomodasi,
             'konversi_akomodasi' => $konversi_akomodasi,
             'tb_sppd' => $tb_sppd,
-            'kurs_sppd' => $kurs_sppd,
             'konversi_sppd' => $konversi_sppd
         );
         $output = $this->db->insert('inhouse_training', $data);
         return $output;
     }
-    
     function get_edit_inhouse_training($id){
        $query=$this->db->query("SELECT * from inhouse_training where id='$id'");
-        return $query->result();
+        return $query->result(); 
     }
-    function edit_inhouse_training($id,$pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $tb_pelatihan, $kurs_pelatihan, $konversi_pelatihan, $tb_akomodasi, $kurs_akomodasi, $konversi_akomodasi, $tb_sppd, $kurs_sppd, $konversi_sppd){
+    function edit_inhouse_training($id,$pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan,  $konversi_pelatihan, $tb_akomodasi,  $konversi_akomodasi, $tb_sppd, $konversi_sppd){
         $data = array(
             'pengirim_ro' => $pengirim_ro,
             'nomor_ro' => $nomor_ro, 
@@ -71,14 +67,12 @@ class Training_model extends CI_Model{
             //'form_usulan' => $form_usulan,
             //'brosur' => $brosur,
             'active' => $active,
+            'kurs' => $kurs,
             'tb_pelatihan' => $tb_pelatihan,
-            'kurs_pelatihan' => $kurs_pelatihan,
             'konversi_pelatihan' => $konversi_pelatihan,
             'tb_akomodasi' => $tb_akomodasi,
-            'kurs_akomodasi' => $kurs_akomodasi,
             'konversi_akomodasi' => $konversi_akomodasi,
             'tb_sppd' => $tb_sppd,
-            'kurs_sppd' => $kurs_sppd,
             'konversi_sppd' => $konversi_sppd
         );
         $this->db->where('id',$id);
