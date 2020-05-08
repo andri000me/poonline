@@ -305,45 +305,46 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title"><i class="nav-icon fas fa-wallet">  Rincian Biaya Pelatihan</i></h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body">s
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">KURS Acuan</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                </div>
+                                                <input name="kurs" type="text" class="form-control" id="kurs" onkeyup="pelatihan(), akomodasi(), sppd()" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <h7>Biaya Pelatihan</h7>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Total Biaya</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="tb_pelatihan" type="text" class="form-control" id="tb_pelatihan" >
+                                                <input name="tb_pelatihan" type="text" class="form-control" id="tb_pelatihan" onkeyup="pelatihan()" required>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <label for="">KURS</label>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon3">$.</span>
-                                                </div>
-                                                <input name="kurs_pelatihan" type="text" class="form-control" id="a.kurs" onkeyup="pelatihan()" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Konversi KURS</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                    <span class="input-group-text" id="basic-addon3">USD.</span>
                                                 </div>
-                                                <input name="konversi_pelatihan" type="text" class="form-control" id="a.konversi" onkeyup="pelatihan()" required>
+                                                <input name="konversi_pelatihan" type="text" class="form-control" id="a.konversi">
                                             </div>
                                         </div>
                                     </div>
@@ -351,36 +352,25 @@
                                 <h7>Biaya Akomodasi</h7>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Total Biaya</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="tb_akomodasi" type="text" class="form-control" id="tb_akomodasi" >
+                                                <input name="tb_akomodasi" type="text" class="form-control" id="tb_akomodasi" onkeyup="akomodasi()" required >
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <label for="">KURS</label>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon3">$.</span>
-                                                </div>
-                                                <input name="kurs_akomodasi" type="text" class="form-control" id="b.kurs" onkeyup="akomodasi()" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Konversi KURS</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                    <span class="input-group-text" id="basic-addon3">USD.</span>
                                                 </div>
-                                                <input name="konversi_akomodasi" type="text" class="form-control" id="b.konversi" onkeyup="akomodasi()" required>
+                                                <input name="konversi_akomodasi" type="text" class="form-control" id="b.konversi" >
                                             </div>
                                         </div>
                                     </div>
@@ -388,36 +378,25 @@
                                 <h7>Biaya SPPD</h7>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Total Biaya</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon3">Rp.</span>
                                                 </div>
-                                                <input name="tb_sppd" type="number" class="form-control" id="tb_sppd" >
+                                                <input name="tb_sppd" type="text" class="form-control" id="tb_sppd" onkeyup="sppd()" required >
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <label for="">KURS</label>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon3">$.</span>
-                                                </div>
-                                                <input name="kurs_sppd" type="text" class="form-control" id="c.kurs" onkeyup="sppd()" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Konversi KURS</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                    <span class="input-group-text" id="basic-addon3">USD.</span>
                                                 </div>
-                                                <input name="konversi_sppd" type="text" class="form-control" id="c.konversi" onkeyup="sppd()" required>
+                                                <input name="konversi_sppd" type="text" class="form-control" id="c.konversi" >
                                             </div>
                                         </div>
                                     </div>
@@ -440,27 +419,27 @@
 <?php $this->load->view('template/footer'); ?>
 <script>
     function pelatihan() {
-      var txtFirstNumberValue = document.getElementById('a.kurs').value;
-      var txtSecondNumberValue = document.getElementById('a.konversi').value;
-      var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
+      var txtFirstNumberValue = document.getElementById('tb_pelatihan').value;
+      var txtSecondNumberValue = document.getElementById('kurs').value;
+      var result = parseInt(txtFirstNumberValue) / parseInt(txtSecondNumberValue);
       if (!isNaN(result)) {
-         document.getElementById('tb_pelatihan').value = result ;
+         document.getElementById('a.konversi').value = result.toFixed(2);
       }
     }
     function akomodasi() {
-      var txtFirstNumberValue = document.getElementById('b.kurs').value;
-      var txtSecondNumberValue = document.getElementById('b.konversi').value;
-      var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
+      var txtFirstNumberValue = document.getElementById('tb_akomodasi').value;
+      var txtSecondNumberValue = document.getElementById('kurs').value;
+      var result = parseInt(txtFirstNumberValue) / parseInt(txtSecondNumberValue);
       if (!isNaN(result)) {
-         document.getElementById('tb_akomodasi').value = result ;
+         document.getElementById('b.konversi').value = result.toFixed(2) ;
       }
     }
     function sppd() {
-      var txtFirstNumberValue = document.getElementById('c.kurs').value;
-      var txtSecondNumberValue = document.getElementById('c.konversi').value;
-      var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
+      var txtFirstNumberValue = document.getElementById('tb_sppd').value;
+      var txtSecondNumberValue = document.getElementById('kurs').value;
+      var result = parseInt(txtFirstNumberValue) / parseInt(txtSecondNumberValue);
       if (!isNaN(result)) {
-         document.getElementById('tb_sppd').value = result ;
+         document.getElementById('c.konversi').value = result.toFixed(2) ;
       }
     }
 </script>
