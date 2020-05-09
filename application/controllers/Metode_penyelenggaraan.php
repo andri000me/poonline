@@ -24,7 +24,7 @@ class Metode_penyelenggaraan extends CI_Controller{
                 $this->session->set_flashdata('message', 'Metode yang anda masukan sudah terdaftar');
             }else{
                 $metode    = $this->input->post('metode');
-                $database  = $this->Metode_penyelenggaraan_model->add_metode_penyelenggaraan($metode);    
+                $database  = $this->Metode_penyelenggaraan_model->add_metode_penyelenggaraan($id, $metode);    
             }        
                 redirect('Metode_penyelenggaraan');
         }else{
