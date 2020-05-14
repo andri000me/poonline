@@ -75,8 +75,7 @@ class Inhouse_training extends CI_Controller{
                 $konversi_akomodasi = $this->input->post('konversi_akomodasi');
                 $tb_sppd = $this->input->post('tb_sppd');
                 $konversi_sppd = $this->input->post('konversi_sppd');
-                $data = $this->Training_model->add_inhouse_training(
-                    $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $contact, $address, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan, $konversi_pelatihan, $tb_akomodasi, $konversi_akomodasi, $tb_sppd, $konversi_sppd
+                $data = $this->Training_model->add_inhouse_training($pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $contact, $address, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan, $konversi_pelatihan, $tb_akomodasi, $konversi_akomodasi, $tb_sppd, $konversi_sppd
                 );
             }
                 redirect('Inhouse_training');
@@ -133,7 +132,7 @@ class Inhouse_training extends CI_Controller{
             $tb_akomodasi               = $this->input->post('tb_akomodasi');
             $konversi_akomodasi         = $this->input->post('konversi_akomodasi');
             $tb_sppd                    = $this->input->post('tb_sppd');
-            $konversi_sppd              = $this->input->post('konversi_sppd');   
+            $konversi_sppd              = $this->input->post('konversi_sppd');
             $data                       = $this->Training_model->edit_inhouse_training($id,$pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $contact, $address, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan, $konversi_pelatihan, $tb_akomodasi, $konversi_akomodasi, $tb_sppd, $konversi_sppd);
             redirect('Inhouse_training');
         }else{
@@ -141,5 +140,4 @@ class Inhouse_training extends CI_Controller{
             $this->load->view('request/v_edit_inhouse_training',$data);
         }
     }
-
 } 
