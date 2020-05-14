@@ -107,22 +107,32 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Provinsi</label>
-                                            <select class="custom-select" name="provinsi" id="" required>
+                                            <select class="custom-select" name="provinsi" id="provinsi" required>
                                                 <option value="">Pilih Provinsi</option>
-                                                <?php foreach ($provinsi as $_provinsi) { ?>
-                                                <option value="<?php echo $_provinsi->provinsi; ?>"><?php echo $_provinsi->provinsi; ?> </option>
-                                                <?php } ?>
+                                                 <?php
+                                                    foreach ($provinsi as $prov) {
+                                                    ?>
+                                                    <option <?php echo $provinsi_selected == $prov->id_provinsi ? 'selected="selected"' : '' ?>
+                                                        value="<?php echo $prov->id_provinsi ?>"><?php echo $prov->nama_provinsi ?></option>
+                                                    <?php
+                                                    }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
 									<div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Kota/Kabupaten</label>
-                                            <select class="custom-select" name="kota" id="" required>
-                                                <option value="">Pilih Kota/kabupaten</option>
-                                                <?php foreach ($kota as $_kota) { ?>
-                                                <option value="<?php echo $_kota->kota; ?>"><?php echo $_kota->kota; ?> </option>
-                                                <?php } ?>
+                                            <select class="custom-select" name="kota" id="kota" required>
+                                                <option value="">No selected</option>
+                                                <?php
+                                                foreach ($kota as $kot) {
+                                                    ?>
+                                                    <option <?php echo $kota_selected == $kot->kota_id_provinsi ? 'selected="selected"' : '' ?>
+                                                        class="<?php echo $kot->kota_id_provinsi ?>" value="<?php echo $kot->id_kota ?>"><?php echo $kot->nama_kota ?></option>
+                                                    <?php
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
@@ -137,15 +147,51 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Vendor Penyelenggara</label>
-                                            <select class="custom-select" name="vendor_penyelenggara" id="" required>
+                                            <select class="custom-select" name="vendor_penyelenggara" id="vendor_penyelenggara" required>
                                                 <option value="">Pilih salah satu</option>
-                                                <?php foreach ($nama_vendor as $data) { ?>
-                                                <option value="<?php echo $data->vendor_name; ?>"><?php echo $data->vendor_name; ?> </option>
-                                                <?php } ?>
+                                                <?php
+                                                    foreach ($vendor_name as $vend) {
+                                                    ?>
+                                                    <option <?php echo $vendor_selected == $vend->vendor_name ? 'selected="selected"' : '' ?>
+                                                        value="<?php echo $vend->vendor_name ?>"><?php echo $vend->vendor_name ?></option>
+                                                    <?php
+                                                    }
+                                                ?>      
                                             </select>
                                         </div>
                                     </div>
-
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">No. Telp Vendor</label>
+                                            <select class="custom-select" name="contact" id="contact" required>
+                                                <?php
+                                                foreach ($contact as $kot) {
+                                                    ?>
+                                                    <option <?php echo $contact_selected == $kot->vendor_name ? 'selected="selected"' : '' ?>
+                                                        class="<?php echo $kot->vendor_name ?>" value="<?php echo $kot->contact ?>"><?php echo $kot->contact ?></option>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label for="">Alamat Vendor</label>
+                                            <select class="custom-select" name="address" id="address" required>
+                                                <?php
+                                                foreach ($address as $kot) {
+                                                    ?>
+                                                    <option <?php echo $address_selected == $kot->vendor_name ? 'selected="selected"' : '' ?>
+                                                        class="<?php echo $kot->vendor_name ?>" value="<?php echo $kot->address ?>"><?php echo $kot->address ?></option>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
@@ -417,7 +463,12 @@
 	</section>
 </div>
 <?php $this->load->view('template/footer'); ?>
+<script src="<?php echo base_url('assets/jquery-1.10.2.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/jquery.chained.min.js') ?>"></script>
 <script>
+    $("#kota").chained("#provinsi");
+    $("#contact").chained("#vendor_penyelenggara")
+    $("#address").chained("#vendor_penyelenggara")
     function pelatihan() {
       var txtFirstNumberValue = document.getElementById('tb_pelatihan').value;
       var txtSecondNumberValue = document.getElementById('kurs').value;
