@@ -62,37 +62,53 @@ class Inhouse_training extends CI_Controller{
                 $kota  = $this->input->post('kota');
                 $tempat = $this->input->post('tempat');
                 $vendor_penyelenggara = $this->input->post('vendor_penyelenggara');
+                $contact    = $this->input->post('contact');
+                $address    = $this->input->post('address');
                 $metode_pemilihan_vendor    = $this->input->post('metode_pemilihan_vendor');
                 $jumlah_peserta = $this->input->post('jumlah_peserta');
                 $catatan = $this->input->post('catatan');
                 $active = '0';
+                $kurs = $this->input->post('kurs');
                 $tb_pelatihan = $this->input->post('tb_pelatihan');
-                $kurs_pelatihan = $this->input->post('kurs_pelatihan');
                 $konversi_pelatihan = $this->input->post('konversi_pelatihan');
                 $tb_akomodasi = $this->input->post('tb_akomodasi');
-                $kurs_akomodasi = $this->input->post('kurs_akomodasi');
                 $konversi_akomodasi = $this->input->post('konversi_akomodasi');
                 $tb_sppd = $this->input->post('tb_sppd');
-                $kurs_sppd = $this->input->post('kurs_sppd');
                 $konversi_sppd = $this->input->post('konversi_sppd');
                 $data = $this->Training_model->add_inhouse_training(
-                    $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara,  $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $tb_pelatihan, $kurs_pelatihan, $konversi_pelatihan, $tb_akomodasi, $kurs_akomodasi, $konversi_akomodasi, $tb_sppd, $kurs_sppd, $konversi_sppd
+                    $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $contact, $address, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan, $konversi_pelatihan, $tb_akomodasi, $konversi_akomodasi, $tb_sppd, $konversi_sppd
                 );
             }
                 redirect('Inhouse_training');
         //}elseif($this->input->post('save')){
 
         }else{
-            $data['bidang'] = $this->Kompetensi_bidang_model->get_bidang();
-            $data['metode'] = $this->Metode_penyelenggaraan_model->get_metode();
-            $data['pemilihan'] = $this->P_vendor_model->get_metode();
-            $data['nama_vendor'] = $this->Vendor_model->get_vendor_name();
-            $data['provinsi'] = $this->Wilayah_model->get_all_provinsi();
-            $data['kota'] = $this->Wilayah_model->get_all_kota();
+            $data = array(
+                'bidang' => $this->Kompetensi_bidang_model->get_bidang(),
+                'metode' => $this->Metode_penyelenggaraan_model->get_metode(),
+                'pemilihan' => $this->P_vendor_model->get_metode(),
+                'vendor_name' => $this->Vendor_model->get_vendor_name(),
+                'contact' => $this->Vendor_model->get_vendor_name(),
+                'address' => $this->Vendor_model->get_vendor_name(),
+                'provinsi' => $this->Wilayah_model->get_all_provinsi(),
+                'kota' => $this->Wilayah_model->get_all_kota(),
+                'vendor_selected' => '',
+                'contact_selected' => '',
+                'address_selected' => '',
+                'provinsi_selected' => '',
+                'kota_selected' => ''
+            );
             $this->load->view('request/v_add_inhouse_training',$data);
         }
 
     }
+
+    function get_vendor(){
+        $vendor_name=$this->input->post('vendor_name');
+        $data=$this->Vendor_model->get_vendor_name($vendor_name);
+        echo json_encode($data);
+    }
+
     public function edit_inhouse_training($id){
         if ($this->input->post('submit')) {
             $nomor_ro                   = $this->input->post('nomor_ro');
@@ -105,20 +121,20 @@ class Inhouse_training extends CI_Controller{
             $kota                       = $this->input->post('kota');
             $tempat                     = $this->input->post('tempat');
             $vendor_penyelenggara       = $this->input->post('vendor_penyelenggara');
+            $contact    = $this->input->post('contact');
+            $address    = $this->input->post('address');
             $metode_metode_pemilihan_vendor    = $this->input->post('metode_metode_pemilihan_vendor');
             $jumlah_peserta             = $this->input->post('jumlah_peserta');
             $catatan                    = $this->input->post('catatan');
             $active                     = '0';
+            $kurs                       = $this->input->post('kurs');
             $tb_pelatihan               = $this->input->post('tb_pelatihan');
-            $kurs_pelatihan             = $this->input->post('kurs_pelatihan');
             $konversi_pelatihan         = $this->input->post('konversi_pelatihan');
             $tb_akomodasi               = $this->input->post('tb_akomodasi');
-            $kurs_akomodasi             = $this->input->post('kurs_akomodasi');
             $konversi_akomodasi         = $this->input->post('konversi_akomodasi');
             $tb_sppd                    = $this->input->post('tb_sppd');
-            $kurs_sppd                  = $this->input->post('kurs_sppd');
             $konversi_sppd              = $this->input->post('konversi_sppd');   
-            $data                       = $this->Training_model->edit_inhouse_training($id,$pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $tb_pelatihan, $kurs_pelatihan, $konversi_pelatihan, $tb_akomodasi, $kurs_akomodasi, $konversi_akomodasi, $tb_sppd, $kurs_sppd, $konversi_sppd);
+            $data                       = $this->Training_model->edit_inhouse_training($id,$pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $contact, $address, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan, $konversi_pelatihan, $tb_akomodasi, $konversi_akomodasi, $tb_sppd, $konversi_sppd);
             redirect('Inhouse_training');
         }else{
             $data['data'] = $this->Training_model->get_edit_inhouse_training($id);
@@ -126,4 +142,4 @@ class Inhouse_training extends CI_Controller{
         }
     }
 
-}
+} 
