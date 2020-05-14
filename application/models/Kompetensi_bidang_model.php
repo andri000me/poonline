@@ -14,7 +14,7 @@
     }
 
     function get_bidang(){		
-		$query=$this->db->query("SELECT bidang FROM kompetensi_bidang");
+		$query=$this->db->query("SELECT * FROM kompetensi_bidang ORDER BY bidang ASC");
         return $query->result();
 	}
 
