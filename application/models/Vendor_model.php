@@ -19,9 +19,13 @@
         return $output;
     }
 
-    function get_vendor_name(){
-        $query=$this->db->query("SELECT vendor_name FROM vendors");
+   function get_vendor_name(){
+        $query=$this->db->query("SELECT * from vendors ORDER BY vendor_name ASC");
         return $query->result();
+    }
+    function get_detail_vendor(){
+    $this->db->order_by('contact', 'asc');
+            return $this->db->get('vendors')->result();
     }
     
     function get_edit_vendor($id){

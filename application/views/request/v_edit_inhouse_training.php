@@ -118,14 +118,12 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                         <div class="form-group">
                                             <label for="">Tempat</label>
                                             <input name="tempat" class="form-control" type="text" value="<?php echo $data[0]->tempat ?>" required>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Vendor Penyelenggara</label>
@@ -133,6 +131,30 @@
                                                 <option value=""><?php echo $data[0]->vendor_penyelenggara ?></option>
                                                 <?php foreach ($nama_vendor as $data) { ?>
                                                 <option value="<?php echo $data->vendor_name; ?>"><?php echo $data->vendor_name; ?> </option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">No. Telp Vendor</label>
+                                            <select class="custom-select" name="contact" id="" >
+                                                <option value=""><?php echo $data[0]->contact ?></option>
+                                                <?php foreach ($contact as $data) { ?>
+                                                <option value="<?php echo $data->contact; ?>"><?php echo $data->contact; ?> </option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label for="">Alamat Vendor</label>
+                                            <select class="custom-select" name="address" id="" >
+                                                <option value=""><?php echo $data[0]->address ?></option>
+                                                <?php foreach ($address as $data) { ?>
+                                                <option value="<?php echo $data->address; ?>"><?php echo $data->address; ?> </option>
                                                 <?php } ?>
                                             </select>
                                         </div>

@@ -11,7 +11,17 @@ class Training_model extends CI_Model{
         return $query->result();
     }
 
-    function add_inhouse_training( $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan, $konversi_pelatihan, $tb_akomodasi, $konversi_akomodasi, $tb_sppd, $konversi_sppd
+    function get_all_submit_inhouse(){
+        $query = $this->db->query("SELECT * FROM inhouse_training where active='0'");
+        return $query->result();
+    }
+
+    function get_all_savedraft_inhouse(){
+        $query = $this->db->query("SELECT * FROM inhouse_training where active='1'");
+        return $query->result();
+    }
+
+    function add_inhouse_training( $pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $contact,$address, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan, $konversi_pelatihan, $tb_akomodasi, $konversi_akomodasi, $tb_sppd, $konversi_sppd
     ){
         $data = array(
             'pengirim_ro' => $pengirim_ro,
@@ -26,6 +36,8 @@ class Training_model extends CI_Model{
             'tempat' => $tempat, 
             'metode_penyelenggaraan' => $metode_penyelenggaraan,
             'vendor_penyelenggara' => $vendor_penyelenggara,
+            'contact' => $contact,
+            'address' => $address,
             'metode_pemilihan_vendor' => $metode_pemilihan_vendor,
             'jumlah_peserta' => $jumlah_peserta, 
             'catatan' => $catatan,
@@ -47,7 +59,7 @@ class Training_model extends CI_Model{
        $query=$this->db->query("SELECT * from inhouse_training where id='$id'");
         return $query->result(); 
     }
-    function edit_inhouse_training($id,$pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan,  $konversi_pelatihan, $tb_akomodasi,  $konversi_akomodasi, $tb_sppd, $konversi_sppd){
+    function edit_inhouse_training($id,$pengirim_ro, $nomor_ro, $kategori_pelatihan, $judul, $metode_penyelenggaraan, $kompetensi_bidang, $tanggal_mulai, $tanggal_selesai, $provinsi, $kota, $tempat, $vendor_penyelenggara, $contact, $address, $metode_pemilihan_vendor, $jumlah_peserta, $catatan, $active, $kurs, $tb_pelatihan,  $konversi_pelatihan, $tb_akomodasi,  $konversi_akomodasi, $tb_sppd, $konversi_sppd){
         $data = array(
             'pengirim_ro' => $pengirim_ro,
             'nomor_ro' => $nomor_ro, 
@@ -61,6 +73,8 @@ class Training_model extends CI_Model{
             'tempat' => $tempat, 
             'metode_penyelenggaraan' => $metode_penyelenggaraan,
             'vendor_penyelenggara' => $vendor_penyelenggara,
+            'contact' => $contact,
+            'address' => $address,
             'metode_metode_pemilihan_vendor' => $metode_pemilihan_vendor,
             'jumlah_peserta' => $jumlah_peserta, 
             'catatan' => $catatan,
